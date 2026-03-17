@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLORAZOA | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>FLORAZOA</h1>
+    <p>A Study of Plants and Animals</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="plants.html">Flora</a>
+    <a href="animals.html">Fauna</a>
+    <a href="resources.html">Resources</a>
+    <a href="quiz game.html">Quiz Game</a>
+    <a href="about.html">About</a>
+    <a href="terms.html">Terms & Policy</a>
+</nav>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<section class="hero">
+    <h2>Welcome to FLORAZOA</h2>
+    <p>Explore and learn about the amazing world of flora and fauna interactively.</p>
+</section>
+<section class="features">
+    <div class="feature-card">
+        <img src="/Users/BASTI/Downloads/drive-download-20260311T111205Z-3-001/HH/istockphoto-1164272151-1024x1024.webp" alt="Plants">
+        <h3>Flora (Plants)</h3>
+        <p>Learn about plant organ systems, tissues, photosynthesis, types, and their importance in ecosystems.</p>
+        <a href="plants.html">Explore Flora</a>
+    </div>
+    <div class="feature-card">
+        <img src="/Users/BASTI/Downloads/drive-download-20260311T111205Z-3-001/KK/philippines-saving-animals-2.avif" alt="Animals">
+        <h3>Fauna (Animals)</h3>
+        <p>Discover animal organ systems, tissues, classifications, adaptations, and their role in nature.</p>
+        <a href="animals.html">Explore Fauna</a>
+    </div>
+    <div class="feature-card">
+        <img src="/Users/BASTI/Downloads/LIBRARY VINES.avif" alt="Resources">
+        <h3>Resources</h3>
+        <p>Access modules, references, and educational content for deeper understanding of biology topics.</p>
+        <a href="resources.html">View Resources</a>
+    </div>
+    <div class="feature-card">
+        <img src="/Users/BASTI/Downloads/drive-download-20260311T111205Z-3-001/FF/istockphoto-1464511713-612x612.jpg" alt="Quiz Game">
+        <h3>Quiz Game</h3>
+        <p>Test your knowledge on plants and animals with fun quizzes and interactive games.</p>
+        <a href="quiz game.html">Play Quiz</a>
+    </div>
+</section>
+<footer>
+    <p style="margin-bottom: 20%;">© 2026 FLORAZOA | Educational Website</p>
+</footer>
+<script>
+    const links = document.querySelectorAll("nav a");
+    let currentIndex = [...links].findIndex(link =>
+        link.href === window.location.href
+    );
+
+    links.forEach((link, index) => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const direction = index > currentIndex ? "slide-out-left" : "slide-out-right";
+            document.body.classList.add(direction);
+
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 400);
+        });
+    });
+</script>
+<script>
+window.addEventListener("scroll", function() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+
+        if(revealTop < windowHeight - 100){
+            reveal.classList.add("active");
+        }
+    });
+});
+</script>
+<section class="reveal"></section>
+
+</body>
+</html>
